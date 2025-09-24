@@ -1,0 +1,18 @@
+* { box-sizing: border-box; }
+html, body, #app { height: 100%; margin: 0; }
+header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 10px 12px; background: #2b2b2b; color: #eee; font-family: system-ui, sans-serif;
+}
+#gmToggle { background:#444; color:#eee; border:1px solid #666; border-radius:10px; padding:6px 10px; }
+#map { width: 100%; height: calc(100% - 56px); background: #e9e0cf; }
+.leaflet-popup-content { font-family: system-ui, sans-serif; }
+#sheet {
+  position: fixed; left: 0; right: 0; bottom: 0; max-height: 50%;
+  background: #fff; border-top-left-radius: 16px; border-top-right-radius: 16px;
+  box-shadow: 0 -10px 30px rgba(0,0,0,.2); padding: 12px; overflow:auto;
+  font-family: system-ui, sans-serif;
+}
+#sheet h2 { margin: 6px 0; }
+#sheet .tags { font-size: 12px; color:#666; }
+.gm { outline: 3px dashed #c77; outline-offset: -3px; }
