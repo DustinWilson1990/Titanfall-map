@@ -3,6 +3,14 @@
     "map": { "width": 2048, "height": 1536, "image": "/assets/map.png" },
     "crs": "simple"
   },
+  "regions": [
+    {
+      "id": "heartlands",
+      "name": "The Heartlands",
+      "polygon": [[350,750],[950,700],[980,1050],[420,1100]],
+      "style": { "stroke": "#8f6b3a", "fill": "#c8b89a", "opacity": 0.15 }
+    }
+  ],
   "pois": [
     {
       "id": "starting_city",
@@ -12,7 +20,15 @@
       "summary": "A bustling hub for rumors, riddles, and supplies.",
       "level": "1–3",
       "tags": ["hub","shops","rumors"],
-      "image": null
+      "image": null,
+      "lore": "Merchants whisper of a Velvet Court to the south and a lake that saps strength to the northeast.",
+      "npcs": [
+        {"name":"Mara the Hawker","note":"Buys curios; pays extra for items from Redspire."}
+      ],
+      "hooks": [
+        "A sealed letter mentions 'the brothers' waiting on the road tavern.",
+        "An old riddle points to a district where 'desire wears a crown'."
+      ]
     },
     {
       "id": "tavern_brothers",
@@ -21,7 +37,15 @@
       "coord": [500, 975],
       "summary": "Just outside the city. Whispers of two mysterious brothers.",
       "tags": ["story-hook","rest","npc"],
-      "image": null
+      "image": null,
+      "lore": "Two travelers speak in parables: one of mercy, one of judgment. The barkeep keeps a ledger of favors owed.",
+      "npcs": [
+        {"name":"Brother of Dawn","note":"Kind eyes; asks what you protect."},
+        {"name":"Brother of Dusk","note":"Cold smile; asks what you would sacrifice."}
+      ],
+      "hooks": [
+        "Choose: aid a caravan (safe) or chase a bandit (risky) — both shape later trials."
+      ]
     },
     {
       "id": "velvet_court",
@@ -31,7 +55,15 @@
       "summary": "Trial of Lust. Glamour, temptation, and hidden claws.",
       "level": "3–4",
       "tags": ["trial","lust","succubi"],
-      "image": null
+      "image": null,
+      "lore": "Perfumed lanterns, music like silk. Promises of power if you surrender a name.",
+      "npcs": [
+        {"name":"The Madame","note":"Smiles like a blade; knows every desire."}
+      ],
+      "hooks": [
+        "Resist temptation to claim a sigil needed for the Lake.",
+        "If you bargain, gain a boon but mark a debt that returns later."
+      ]
     },
     {
       "id": "sloth_lake",
@@ -41,7 +73,13 @@
       "summary": "Trial of Sloth. Strength ebbs the longer you linger.",
       "level": "4–5",
       "tags": ["trial","sloth","hazard"],
-      "image": null
+      "image": null,
+      "lore": "Water like glass, time like honey. Every choice delayed becomes a chain.",
+      "npcs": [],
+      "hooks": [
+        "Defeat the Warden of Stillness before exhaustion sets in.",
+        "Cure requires the sigil from the Velvet Court — or accept a lasting scar."
+      ]
     }
   ]
 }
