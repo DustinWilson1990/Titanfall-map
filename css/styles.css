@@ -1,18 +1,61 @@
 * { box-sizing: border-box; }
 html, body, #app { height: 100%; margin: 0; }
-header {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 10px 12px; background: #2b2b2b; color: #eee; font-family: system-ui, sans-serif;
+:root{
+  --ink:#2b2b2b; --ink-soft:#5a544a; --paper:#e9e0cf; --paper-dark:#d9cdb3;
+  --accent:#8f6b3a; --chip:#efe7d3; --chip-ink:#4b473e;
 }
-#gmToggle { background:#444; color:#eee; border:1px solid #666; border-radius:10px; padding:6px 10px; }
-#map { width: 100%; height: calc(100% - 56px); background: #e9e0cf; }
-.leaflet-popup-content { font-family: system-ui, sans-serif; }
-#sheet {
-  position: fixed; left: 0; right: 0; bottom: 0; max-height: 50%;
-  background: #fff; border-top-left-radius: 16px; border-top-right-radius: 16px;
-  box-shadow: 0 -10px 30px rgba(0,0,0,.2); padding: 12px; overflow:auto;
-  font-family: system-ui, sans-serif;
+body{ background:var(--paper); color:var(--ink); }
+header{
+  display:flex; gap:12px; align-items:center; justify-content:space-between;
+  padding:10px 12px; background:linear-gradient(180deg, #2b2b2b, #1f1f1f);
+  color:#eee; font-family: system-ui, ui-sans-serif, Segoe UI, Roboto, Helvetica, Arial, Apple Color Emoji, Noto Color Emoji;
+  position: sticky; top:0; z-index:1000; box-shadow: 0 2px 12px rgba(0,0,0,.25);
 }
-#sheet h2 { margin: 6px 0; }
-#sheet .tags { font-size: 12px; color:#666; }
-.gm { outline: 3px dashed #c77; outline-offset: -3px; }
+header h1{ font-size:16px; margin:0; letter-spacing:.3px; }
+#gmToggle{
+  background:#3a3a3a; color:#eee; border:1px solid #5b5b5b; border-radius:999px; padding:7px 12px;
+}
+
+#map{
+  width:100%; height: calc(100% - 56px);
+  background:
+    radial-gradient(1200px 600px at 20% 20%, rgba(0,0,0,.08), transparent 60%),
+    var(--paper);
+}
+
+/* Marker chips */
+.leaflet-marker-icon .poi-chip{
+  display:flex; align-items:center; justify-content:center;
+  width:32px; height:32px; border-radius:10px;
+  background: #fff; border:1px solid rgba(0,0,0,.15);
+  box-shadow: 0 6px 15px rgba(0,0,0,.18);
+  transform: translateY(-2px);
+}
+.leaflet-tooltip{ font-family: system-ui, sans-serif; font-weight: 600; }
+
+#sheet{
+  position: fixed; left: 0; right: 0; bottom: 0; max-height: 56%;
+  background: #fff; border-top-left-radius: 18px; border-top-right-radius: 18px;
+  box-shadow: 0 -10px 30px rgba(0,0,0,.25); padding: 14px 14px 18px; overflow:auto;
+  font-family: system-ui, ui-sans-serif, Segoe UI, Roboto, Helvetica, Arial;
+  transform: translateY(8px); opacity: 0; transition: opacity .18s ease, transform .18s ease;
+}
+#sheet.show{ transform: translateY(0); opacity: 1; }
+#sheet .handle{
+  width: 44px; height: 5px; background: #ddd; border-radius: 999px; margin: 0 auto 10px;
+}
+#sheet h2{ margin: 6px 0 2px; font-size: 20px; }
+#sheet .sub{ font-size: 12px; color:#777; margin-bottom: 10px; }
+#sheet .tags{ display:flex; flex-wrap:wrap; gap:6px; margin:10px 0 12px; }
+#sheet .tag{
+  background: var(--chip); color: var(--chip-ink); border:1px solid #ded6c1;
+  padding:4px 8px; border-radius: 999px; font-size: 12px;
+}
+#sheet img.cover{
+  width:100%; border-radius:12px; border:1px solid #eee; display:block; margin:8px 0 10px;
+}
+.actions{ display:flex; gap:8px; flex-wrap:wrap; }
+.actions button{
+  background: #f3efe5; border:1px solid #d8cfb8; padding:8px 10px; border-radius:10px;
+}
+.gm #map{ outline: 3px dashed #c77; outline-offset: -3px; }
