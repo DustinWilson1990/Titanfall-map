@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Titanfall – Parchment Map (Lite)</title>
+  <title>Titanfall Atlas (Lite)</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
         integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
   <link rel="stylesheet" href="/css/styles.css" />
@@ -12,9 +12,29 @@
   <div id="app">
     <header>
       <h1>Titanfall Atlas (Lite)</h1>
-      <button id="gmToggle" aria-pressed="false" title="Toggle GM Mode">GM Mode: Off</button>
+      <div class="header-actions">
+        <button id="gmToggle" aria-pressed="false" title="Toggle GM Mode">GM Mode: Off</button>
+      </div>
     </header>
-    <div id="map"></div>
+
+    <div id="toolbar">
+      <input id="search" type="search" placeholder="Search places, tags, NPCs…" />
+      <div class="filters">
+        <label><input type="checkbox" class="type-filter" value="city" checked> City</label>
+        <label><input type="checkbox" class="type-filter" value="tavern" checked> Tavern</label>
+        <label><input type="checkbox" class="type-filter" value="district" checked> District</label>
+        <label><input type="checkbox" class="type-filter" value="wilderness" checked> Wilderness</label>
+        <label><input type="checkbox" class="type-filter" value="dungeon" checked> Dungeon</label>
+        <label><input type="checkbox" class="type-filter" value="trial" checked> Trial</label>
+      </div>
+      <div class="hint">Tip: In GM Mode, press and drag to reveal the map. Two-finger drag to erase.</div>
+    </div>
+
+    <div id="map-wrap">
+      <div id="map"></div>
+      <canvas id="fog"></canvas>
+    </div>
+
     <div id="sheet" hidden></div>
   </div>
 
