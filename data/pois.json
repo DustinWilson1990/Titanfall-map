@@ -1,0 +1,42 @@
+{
+  "meta": {
+    "map": { "width": 4096, "height": 3072, "image": "/assets/map.png" },
+    "crs": "simple"
+  },
+  "pois": [
+    {
+      "id": "starting_city",
+      "name": "Starting City",
+      "type": "city",
+      "coord": [900, 1800],
+      "summary": "A bustling hub for rumors, riddles, and supplies.",
+      "tags": ["hub","shops","rumors"]
+    },
+    {
+      "id": "tavern_brothers",
+      "name": "Wayside Tavern",
+      "type": "tavern",
+      "coord": [1000, 1950],
+      "summary": "Just outside the city. Whispers of two mysterious brothers.",
+      "tags": ["story-hook","rest","npc"]
+    },
+    {
+      "id": "velvet_court",
+      "name": "The Velvet Court",
+      "type": "district",
+      "coord": [1400, 2100],
+      "summary": "Trial of Lust. Glamour, temptation, and hidden claws.",
+      "level": "3–4",
+      "tags": ["trial","lust","succubi"]
+    },
+    {
+      "id": "sloth_lake",
+      "name": "The Draining Lake",
+      "type": "wilderness",
+      "coord": [2200, 1600],
+      "summary": "Trial of Sloth. Strength ebbs the longer you linger.",
+      "level": "4–5",
+      "tags": ["trial","sloth","hazard"]
+    }
+  ]
+}
